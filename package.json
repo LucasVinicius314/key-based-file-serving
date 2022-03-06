@@ -1,0 +1,16 @@
+{
+  "name": "key-based-file-serving",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "author": "Lucas Coelho <58010418+LucasVinicius314@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.21"
+  }
+}
