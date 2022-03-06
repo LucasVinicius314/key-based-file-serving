@@ -127,5 +127,6 @@ dist
 .pnp.*
 
 build/
+content/
 
 keys.json

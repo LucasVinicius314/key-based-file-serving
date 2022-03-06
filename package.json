@@ -1,7 +1,7 @@
 {
   "name": "key-based-file-serving",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "build/index.js",
   "author": "Lucas Coelho <58010418+LucasVinicius314@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {

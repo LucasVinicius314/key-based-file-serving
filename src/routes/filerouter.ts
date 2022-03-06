@@ -2,18 +2,20 @@ import * as fs from 'fs'
 
 import { Entry } from '../typescript'
 import { Router } from 'express'
-import { keysDescriptor } from '.'
+import { keysDescriptor } from '..'
+
+import path = require('path')
 
 export const fileRouter = Router()
 
 fileRouter.get(/\w+/, (req, res) => {
-  const path = req.path
+  const reqPath = req.path.substring(1)
 
   const data = fs.readFileSync(keysDescriptor).toString()
 
   const decoded = JSON.parse(data) as Entry[]
 
-  const entry = decoded.find((f) => f.path === path)
+  const entry = decoded.find((f) => f.path === reqPath)
 
   if (entry === undefined) {
     res.status(403).send()
@@ -39,5 +41,7 @@ fileRouter.get(/\w+/, (req, res) => {
 
   fs.writeFileSync(keysDescriptor, encoded)
 
-  res.sendFile(`/content/${descriptor}`)
+  const targetPath = path.resolve(`./content/${descriptor}`)
+
+  res.sendFile(targetPath)
 })
